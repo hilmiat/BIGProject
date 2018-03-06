@@ -1,3 +1,20 @@
-<p>
-  contact works!
-</p>
+<div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Nama" [(ngModel)]="model.nama">
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <textarea matInput placeholder="Alamat" [(ngModel)]="model.alamat"></textarea>
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <mat-select placeholder="Pilihan" [(ngModel)]="model.pilihan">
+        <mat-option value="1">Pilihan 1</mat-option>
+        <mat-option value="2">Pilihan 2</mat-option>
+        <mat-option value="3">Pilihan 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br/>
+    <button (click)="doSubmit()" mat-raised-button color="accent">Simpan</button>
+  </div>
+  <h1>{{model.nama}}</h1>

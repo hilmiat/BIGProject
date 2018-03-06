@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  model = {nama:'Isi nama',alamat:'',pilihan:''}
 
+  doSubmit(){
+    console.log('Anda mengirim data:',this.model);
+  }
   constructor() { }
 
   ngOnInit() {

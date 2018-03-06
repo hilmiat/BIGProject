@@ -7,12 +7,16 @@ import { KomponenkuComponent } from './komponenku/komponenku.component';
 import { GambarComponent } from './gambar/gambar.component';
 import { TabelSiswaComponent } from './tabel-siswa/tabel-siswa.component';
 import {MatButtonModule,MatToolbarModule,MatTableModule,
-  MatCardModule,MatProgressSpinnerModule,MatProgressBarModule} from '@angular/material';
+  MatCardModule,MatProgressSpinnerModule,
+  MatProgressBarModule,MatFormFieldModule,
+  MatSelectModule,MatInputModule} from '@angular/material';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component'
 import { DetailComponent } from './pages/detail/detail.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule } from '@angular/forms'
 
 //import untuk kebutuhan routing
 import {RouterModule, Routes} from '@angular/router'
@@ -47,10 +51,12 @@ import {HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MatButtonModule,MatToolbarModule,
-    MatTableModule,MatCardModule,MatProgressSpinnerModule,MatProgressBarModule,
+    MatTableModule,MatCardModule,MatProgressSpinnerModule,MatProgressBarModule,MatFormFieldModule,MatSelectModule,MatInputModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [RumahSakitService],
   bootstrap: [AppComponent]
