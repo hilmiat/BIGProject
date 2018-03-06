@@ -9,7 +9,7 @@ import {RumahSakitService} from '../../service/rumah-sakit.service';
 })
 export class HomeComponent implements OnInit {
   dataRS:any[];
-  displayedColumns = ['nama_rsu','jenis_rsu']
+  displayedColumns = ['nama_rsu','jenis_rsu','id']
   constructor(private rsService:RumahSakitService) {
       console.log('mengambil data rumah sakit');
       console.log(this.rsService.dataRumahSakit);    

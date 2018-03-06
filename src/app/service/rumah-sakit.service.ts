@@ -9,9 +9,6 @@ export class RumahSakitService {
     {nama_rsu:"DR. Mintohardjo", jenis_rsu:"Rumah Sakit Umum TNI - AL"},
     {nama_rsu:"Sahid Sahirman", jenis_rsu:"Rumah Sakit Umum"},
   ] 
-  getDataRS():any[]{
-    return this.dataRumahSakit;
-  }
   constructor(private http:HttpClient) { }
 
   endpointUrl = "/myapi/v1/rumahsakitumum";
@@ -23,5 +20,8 @@ export class RumahSakitService {
    getDataFromWS():Observable<any>{
      return this.http.get<any>(this.endpointUrl,{headers:this.header});
    } 
+   getDataRS(id):Observable<any>{
+    return this.http.get<any>(this.endpointUrl+'/'+id,{headers:this.header});
+  } 
 
 }

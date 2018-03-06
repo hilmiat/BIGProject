@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { KomponenkuComponent } from './komponenku/komponenku.component';
 import { GambarComponent } from './gambar/gambar.component';
 import { TabelSiswaComponent } from './tabel-siswa/tabel-siswa.component';
-import {MatButtonModule,MatToolbarModule,MatTableModule} from '@angular/material';
+import {MatButtonModule,MatToolbarModule,MatTableModule,
+  MatCardModule,MatProgressSpinnerModule,MatProgressBarModule} from '@angular/material';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component'
+import { DetailComponent } from './pages/detail/detail.component'
+
 //import untuk kebutuhan routing
 import {RouterModule, Routes} from '@angular/router'
 //konfigurasi route
@@ -18,6 +21,7 @@ const appRoutes: Routes = [
   { path:'home', component:HomeComponent },
   { path:'about', component:AboutComponent },
   { path:'contact', component:ContactComponent },
+  { path:'detail/:id', component:DetailComponent},
   { path: '', redirectTo:'home', pathMatch:'full' },
   { path:'**', component: PageNotFoundComponent }
 ]
@@ -25,7 +29,8 @@ const appRoutes: Routes = [
 //import service
 import {RumahSakitService} from './service/rumah-sakit.service'
 //import untuk http client
-import {HttpClientModule } from '@angular/common/http'
+import {HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -38,11 +43,13 @@ import {HttpClientModule } from '@angular/common/http'
     AboutComponent,
     ContactComponent,
     PageNotFoundComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    MatButtonModule,MatToolbarModule,MatTableModule,
+    MatButtonModule,MatToolbarModule,
+    MatTableModule,MatCardModule,MatProgressSpinnerModule,MatProgressBarModule,
     HttpClientModule,
   ],
   providers: [RumahSakitService],

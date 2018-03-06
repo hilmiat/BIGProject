@@ -1,3 +1,5 @@
+<mat-progress-bar mode="indeterminate" *ngIf="!dataRS">
+</mat-progress-bar>
 <mat-table [dataSource]="dataRS">
   <!-- buat kolom -->
   <ng-container matColumnDef="nama_rsu">
@@ -7,6 +9,12 @@
   <ng-container matColumnDef="jenis_rsu">
     <mat-header-cell *matHeaderCellDef>Jenis Rumah Sakit</mat-header-cell>
     <mat-cell *matCellDef="let rs">{{rs.jenis_rsu}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+    <mat-cell *matCellDef="let rs">{{rs.id}}
+      <a [routerLink]="['/detail',rs.id]">Detail</a>
+    </mat-cell>
   </ng-container>
   <!-- definisikan data tiap baris -->
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

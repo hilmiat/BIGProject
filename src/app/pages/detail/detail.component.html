@@ -1,0 +1,15 @@
+<mat-spinner *ngIf="!rumahsakit"></mat-spinner>
+<mat-card *ngIf="rumahsakit">
+  <mat-card-header>
+    <mat-card-title>{{rumahsakit.nama_rsu}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li>Jenis RSU: {{rumahsakit.jenis_rsu}}</li>
+      <li>Alamat: {{rumahsakit.location.alamat}}</li>
+      <li>website: 
+        <a href="http://{{rumahsakit.website}}">{{rumahsakit.website}}</a>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
