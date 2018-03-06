@@ -24,6 +24,9 @@ const appRoutes: Routes = [
 
 //import service
 import {RumahSakitService} from './service/rumah-sakit.service'
+//import untuk http client
+import {HttpClientModule } from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import {RumahSakitService} from './service/rumah-sakit.service'
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    MatButtonModule,MatToolbarModule,MatTableModule
+    MatButtonModule,MatToolbarModule,MatTableModule,
+    HttpClientModule,
   ],
   providers: [RumahSakitService],
   bootstrap: [AppComponent]

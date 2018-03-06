@@ -1,0 +1,8 @@
+{
+    "/myapi/*":{
+        "target":"http://api.jakarta.go.id",
+        "changeOrigin":true,
+        "secure":false,
+        "pathRewrite":{"^/myapi":""}
+    }
+}

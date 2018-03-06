@@ -15,7 +15,14 @@ export class HomeComponent implements OnInit {
       console.log(this.rsService.dataRumahSakit);    
    }
   ngOnInit() {
-    this.dataRS = this.rsService.dataRumahSakit;
+    // this.dataRS = this.rsService.dataRumahSakit;
+    this.rsService.getDataFromWS().subscribe(
+      result=>{
+        console.log(result)
+        this.dataRS = result.data
+      },
+      error=>{console.log(error)}
+    );
   }
 
 }
