@@ -4,4 +4,10 @@
     Daftar siswa
   </h1>
 </div>
-<app-tabel-siswa></app-tabel-siswa>
+<!-- membuat link untuk perpindahan antar halaman -->
+<a routerLink="/home" routerLinkActive="active">Home</a>
+<a routerLink="/about" routerLinkActive="active">About</a>
+<a routerLink="/contact" routerLinkActive="active">Contact</a>
+
+<!-- buat elemen yang akan menampilkan konten tiap page -->
+<router-outlet></router-outlet>

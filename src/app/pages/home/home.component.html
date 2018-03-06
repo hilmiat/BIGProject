@@ -1,0 +1,14 @@
+<mat-table [dataSource]="dataRS">
+  <!-- buat kolom -->
+  <ng-container matColumnDef="nama_rsu">
+    <mat-header-cell *matHeaderCellDef>Nama Rumah Sakit</mat-header-cell>
+    <mat-cell *matCellDef="let rs">{{rs.nama_rsu |uppercase}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="jenis_rsu">
+    <mat-header-cell *matHeaderCellDef>Jenis Rumah Sakit</mat-header-cell>
+    <mat-cell *matCellDef="let rs">{{rs.jenis_rsu}}</mat-cell>
+  </ng-container>
+  <!-- definisikan data tiap baris -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row;columns:displayedColumns;"></mat-row>
+</mat-table>
